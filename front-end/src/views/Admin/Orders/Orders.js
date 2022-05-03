@@ -15,6 +15,8 @@ import { updateSearchData } from '../../../store/search/index'
 import { useNavigate } from 'react-router-dom'
 import ActionGroup from '../../../components/ActionGroup/ActionGroup';
 import { SORT_PRODUCT_COST } from '../../../constants/index'
+import { formatPrice } from '../../../utils/formatPrice'
+import { showToastError, showToastSuccess } from './../../../components/CustomToast/CustomToast';
 
 export default function Orders() {
 
@@ -68,8 +70,10 @@ export default function Orders() {
         try {
             await invoiceApi.deleteInvoice(id)
             updateInvoice()
+            showToastSuccess("Xóa hóa đơn thành công")
         } catch (error) {
             console.log(error)
+            showToastError("Xóa hóa đơn thất bại")
         }
     }
 
@@ -111,7 +115,12 @@ export default function Orders() {
         },
         {
             Header: 'Cost',
-            accessor: 'cost'
+            accessor: 'cost',
+            Cell: data => {
+                return <span>
+                    {formatPrice(data?.row?.original?.cost)} VND
+                </span>
+            }
         },
         {
             Header: 'Status',

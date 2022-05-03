@@ -8,9 +8,11 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useFetchCoupon, useCoupon } from '../../../store/coupon/hook'
 import { useParams } from 'react-router-dom'
 import { formatDDMMYYYYHHmm } from '../../../utils/formatDatetime'
+import { showToastError, showToastSuccess } from './../../../components/CustomToast/CustomToast';
 export default function EditCoupon() {
   useFetchCoupon()
   const coupon = useCoupon()
+
   const [name, setName] = useState()
   const [amount, setAmount] = useState()
   const [value, setValue] = useState()
@@ -18,14 +20,15 @@ export default function EditCoupon() {
   const [pending, setPending] = useState(false)
   const [endDate, setEndDate] = useState();
   const { id } = useParams()
-
+  
 
   useEffect(() => {
-    setName(coupon?.data?.name)
-    setAmount(coupon?.data?.amount)
-    setCode(coupon?.data?.code)
-    setValue(coupon?.data?.value)
-    setEndDate(new Date(coupon?.data?.endDate))
+    setName(coupon?.data?.[0]?.name)
+    setAmount(coupon?.data?.[0]?.amount)
+    setCode(coupon?.data?.[0]?.code)
+    setValue(coupon?.data?.[0]?.value)
+    setEndDate(coupon?.data?.[0]?.endDate)
+
   }, [coupon])
 
   const handleChangeDate = (date) => {
@@ -35,6 +38,7 @@ export default function EditCoupon() {
   const handleUpdateCoupon = async (e) => {
     e.preventDefault()
     setPending(true)
+
     try {
       await couponApi.editCoupon(id, {
         name,
@@ -44,8 +48,10 @@ export default function EditCoupon() {
         endDate: new Date(endDate).toISOString()
       })
       setPending(false)
+      showToastSuccess("Cập nhật thành công")
     } catch (error) {
       console.log(error)
+      showToastError("Cập nhật thất bại")
     }
   }
 

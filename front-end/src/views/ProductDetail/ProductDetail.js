@@ -6,51 +6,28 @@ import Comment from '../../components/Comment'
 import ProductCardV2 from '../../components/Card/ProductCardV2';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import productApi from './../../api/productApi';
-import { useFetchProduct, useProduct } from '../../store/product/hook'
-
+import { useFetchProduct, useProduct, useFetchProducts, useProducts } from '../../store/product/hook'
+import { useParams } from 'react-router-dom'
+import { addToCart } from './../../utils/addToCart';
+import { useDispatch } from 'react-redux'
+import { fetchUser } from '../../store/user'
+import { setCart } from '../../store/product'
 export default function ProductDetail() {
+
   useFetchProduct()
+  useFetchProducts()
   const product = useProduct()
+  const products = useProducts()
   const [tab, setTab] = useState(1)
+  const { id } = useParams()
+  const dispatch = useDispatch()
+  
+  const userLogin = JSON.parse(localStorage?.getItem('USER_LOGIN'))
+
   const handleChangeTab = (tab) => {
     setTab(tab)
   }
-  const products = [
-    {
-      name: 'MICHAEL KORS WATCH',
-      image1: '/images/home/product5.jpg',
-      image2: '/images/home/product6.jpg',
-      id: '',
-      price: '5,000,000 ',
-      priceSale: '3,250,000',
-    },
-    {
-      name: 'MICHAEL KORS WATCH',
-      image1: '/images/home/product7.jpg',
-      image2: '/images/home/product8.jpg',
-      id: '',
-      price: '5,000,000 ',
-      priceSale: '3,250,000',
-    },
-    {
-      name: 'MICHAEL KORS WATCH',
-      image1: '/images/home/product9.jpg',
-      image2: '/images/home/product10.jpg',
-      id: '',
-      price: '5,000,000 ',
-      priceSale: '3,250,000',
-    },
-    {
-      name: 'MICHAEL KORS WATCH',
-      image1: '/images/home/product11.jpg',
-      image2: '/images/home/product12.jpg',
-      id: '',
-      price: '5,000,000 ',
-      priceSale: '3,250,000',
-    },
 
-  ]
 
   const responsive = {
     desktop: {
@@ -72,7 +49,7 @@ export default function ProductDetail() {
 
   return (
 
-   <div className="w-full bg-white">
+    <div className="w-full bg-white">
       <div className="max-w-screen-xl w-full mx-auto py-5">
         <div className="flex">
           <div className="w-3/5 grid grid-cols-2 gap-2">
@@ -96,7 +73,7 @@ export default function ProductDetail() {
                 className="px-2"
               />
               <a href="#product-review" className="px-2 border-l border-gray-300 underline">
-                See 18 reviews
+                Xem {product?.comment?.data?.length || 0} đánh giá
               </a>
             </div>
             <Price
@@ -107,34 +84,39 @@ export default function ProductDetail() {
             />
 
             <a href="#des-detail" className="text-primary underline">
-              Description & Details
+              Mô tả & Chi tiết
             </a>
 
             <div className="flex items-center w-full mt-5 pb-10 border-b border-gray-300">
-              <button className="bg-black text-white font-medium text-lg py-4 px-5 hover:opacity-80 w-full uppercase">
+              <button
+                onClick={async () => {
+                  await addToCart(userLogin?._id, id)
+                  await dispatch(fetchUser(userLogin?._id))
+                }}
+                className="bg-black text-white font-medium text-lg py-4 px-5 hover:opacity-80 w-full uppercase">
                 Thêm vào giỏ hàng
               </button>
             </div>
-            
+
             <div className="py-5 pl-3">
-             <div className="flex items-center py-1">
+              <div className="flex items-center py-1">
                 <i className='bx bxs-truck text-2xl opacity-80'></i>
                 <p className="opacity-80 text-sm-md ml-5">
-                  Free Expedited Shipping over 200+
+                  Miễn phí giao hàng
                 </p>
-             </div>
-             <div className="flex items-center py-1">
+              </div>
+              <div className="flex items-center py-1">
                 <i class='bx bx-revision text-2xl opacity-80'></i>
                 <p className="opacity-80 text-sm-md ml-5">
-                  60-Day Returns
+                  Đổi trả trong 60 ngày
                 </p>
-             </div>
-             <div className="flex items-center py-1">
+              </div>
+              <div className="flex items-center py-1">
                 <i className='bx bx-check-shield text-2xl opacity-80'></i>
                 <p className="opacity-80 text-sm-md ml-5">
-                  2 Year Warranty
+                  Bảo hành 2 năm
                 </p>
-             </div>
+              </div>
             </div>
           </div>
         </div>
@@ -145,13 +127,13 @@ export default function ProductDetail() {
               className={classnames("uppercase text-black mr-4 px-2 pb-1 cursor-pointer", { "border-b-4 border-primary": tab === 1 })}
               onClick={() => handleChangeTab(1)}
             >
-              Description
+              Mô tả
             </div>
             <div
               className={classnames("uppercase text-black px-2 pb-1 cursor-pointer", { "border-b-4 border-primary": tab === 2 })}
               onClick={() => handleChangeTab(2)}
             >
-              Details
+              Chi tiết
             </div>
 
           </div>
@@ -204,69 +186,84 @@ export default function ProductDetail() {
           }
         </div>
 
-        <p className="text-black font-medium text-2xl py-5 my-10 border-b border-gray-300">Recommend for you</p>
-        <div className="mr-[-8px] ml-[-8px]">
-          <Carousel
-            swipeable
-            autoPlay
-            autoPlaySpeed={2000}
-            draggable={true}
-            showDots={false}
-            responsive={responsive}
-            ssr={true} // means to render carousel on server-side.
-            infinite={true}
-            keyBoardControl={true}
-            // removeArrowOnDeviceType={["tablet", "mobile"]}
-            minimumTouchDrag={80}
-            slidesToSlide={1}
-            itemClass="top-product-carousel-items"
-            containerClass="top-product-carousel-container"
-            partialVisible
-          >
+        {
+          products && (
+            <>
+              <p className="text-black font-medium text-2xl py-5 my-10 border-b border-gray-300">Gợi ý cho bạn</p>
+              <div className="mr-[-8px] ml-[-8px]">
+                <Carousel
+                  swipeable
+                  autoPlay
+                  autoPlaySpeed={2000}
+                  draggable={true}
+                  showDots={false}
+                  responsive={responsive}
+                  ssr={true} // means to render carousel on server-side.
+                  infinite={true}
+                  keyBoardControl={true}
+                  // removeArrowOnDeviceType={["tablet", "mobile"]}
+                  minimumTouchDrag={80}
+                  slidesToSlide={1}
+                  itemClass="top-product-carousel-items"
+                  containerClass="top-product-carousel-container"
+                  partialVisible
+                >
 
-            {
-              products.map((product, index) => {
-                return (
-                  <ProductCardV2 product={product} />
-                )
-              })
-            }
+                  {
+                    products?.data?.map((product, index) => {
+                      if (index % 5 === 0) {
+                        return
+                      }
+                      return (
+                        <ProductCardV2 product={product} key={product?._id} />
+                      )
+                    })
+                  }
 
-          </Carousel>
-        </div>
+                </Carousel>
+              </div>
+            </>
+          )
+        }
 
-        <p className="text-black font-medium text-2xl py-5 my-10 border-b border-gray-300">Recently Viewed</p>
-        <div className="mr-[-8px] ml-[-8px]">
-          <Carousel
-            swipeable
-            autoPlay
-            autoPlaySpeed={2000}
-            draggable={true}
-            showDots={false}
-            responsive={responsive}
-            ssr={true} // means to render carousel on server-side.
-            infinite={true}
-            keyBoardControl={true}
-            // removeArrowOnDeviceType={["tablet", "mobile"]}
-            minimumTouchDrag={80}
-            slidesToSlide={1}
-            itemClass="top-product-carousel-items"
-            containerClass="top-product-carousel-container"
-            partialVisible
-          >
+        {
+          products && (
+            <>
+              <p className="text-black font-medium text-2xl py-5 my-10 border-b border-gray-300">Xem gần đây</p>
+              <div className="mr-[-8px] ml-[-8px]">
+                <Carousel
+                  swipeable
+                  autoPlay
+                  autoPlaySpeed={2000}
+                  draggable={true}
+                  showDots={false}
+                  responsive={responsive}
+                  ssr={true} // means to render carousel on server-side.
+                  infinite={true}
+                  keyBoardControl={true}
+                  // removeArrowOnDeviceType={["tablet", "mobile"]}
+                  minimumTouchDrag={80}
+                  slidesToSlide={1}
+                  itemClass="top-product-carousel-items"
+                  containerClass="top-product-carousel-container"
+                  partialVisible
+                >
 
-            {
-              products.map((product, index) => {
-                return (
-                  <ProductCardV2 product={product} />
-                )
-              })
-            }
+                  {
+                    products?.data?.map((product, index) => {
+                      return (
+                        <ProductCardV2 product={product} />
+                      )
+                    })
+                  }
 
-          </Carousel>
-        </div>
+                </Carousel>
+              </div>
+            </>
 
-        <Comment />
+          )
+        }
+        <Comment comment={product?.comment?.data} question={product?.question?.data} productId={id} />
 
         <div className="w-full border-t border-gray-300 py-10">
           <p className="font-medium text-lg text-center mb-5">
@@ -288,11 +285,11 @@ export default function ProductDetail() {
             <div className="px-20">
               <img src="https://res.cloudinary.com/mejuri-com/image/upload/v1572878529/brand-story/Coveteur.svg" alt="icon" />
             </div>
-        </div>
+          </div>
 
         </div>
       </div>
 
-   </div>
+    </div>
   )
 }

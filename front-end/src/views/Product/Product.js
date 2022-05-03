@@ -12,16 +12,18 @@ import CheckBox from './../../components/Checkbox/Checkbox';
 import { updateSearchData, resetSearchData } from '../../store/search/index'
 import { useUpdateQuery, useSearchData, useUpdateSearch } from '../../store/search/hook'
 import { useDispatch } from 'react-redux'
+import OnTop from '../../components/OnTop/OnTop'
 
 export default function Product() {
   useFetchProducts()
   useFetchAllProductType()
   useUpdateQuery()
   useUpdateSearch()
+
   const searchData = useSearchData()
-  console.log(searchData)
+
   const products = useProducts()
-  console.log(products)
+
   const productTypes = useAllProductType()
   const [reset, setReset] = useState(false)
   const dispatch = useDispatch()
@@ -33,7 +35,6 @@ export default function Product() {
 
   const handleClear = (e) => {
     e.preventDefault();
-    console.log(1)
     dispatch(resetSearchData())
     setReset(true)
   }
@@ -58,9 +59,12 @@ export default function Product() {
 
   return (
     <div className="w-full bg-white px-5">
+      <div className="fixed bottom-10 right-10">
+        <OnTop />
+      </div>
       <div className="max-w-screen-3xl w-full mx-auto py-5">
         <div className="flex items-center justify-between">
-          <div className="flex items-center text-xl">
+          <div className="flex items-center text-xl" id="top">
             <Link to="/" className="opacity-50 hover:opacity-100">TRANG CHỦ</Link>
             <span className="mx-3">/</span>
             <p className="text-black font-medium">CỬA HÀNG</p>
@@ -128,7 +132,7 @@ export default function Product() {
             </div>
             <hr className="bg-gray-300 my-5 h-[1px]" />
 
-            <div className="">
+            {/* <div className="">
               <p className="text-lg px-3">Giá</p>
               <div className="px-5">
                 {
@@ -142,8 +146,8 @@ export default function Product() {
                     />
                   ))}
               </div>
-            </div>
-            <hr className="bg-gray-300 my-5 h-[1px]" />
+            </div> */}
+            {/* <hr className="bg-gray-300 my-5 h-[1px]" /> */}
             {productStorage && (
               <>
                 <h1 className="text-xl uppercase text-black font-semibold mb-5 opacity-80">Quan tâm</h1>

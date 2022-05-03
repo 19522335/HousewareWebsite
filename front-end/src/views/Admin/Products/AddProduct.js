@@ -5,6 +5,7 @@ import Dropdown from '../../../components/Dropdown/Dropdown'
 import { useFetchAllProductType, useAllProductType } from './../../../store/product/hook';
 import productApi from '../../../api/productApi'
 import Button from '../../../components/Button/Button'
+import { showToastError, showToastSuccess } from './../../../components/CustomToast/CustomToast';
 export default function AdminAddProduct() {
   useFetchAllProductType()
   const productTypes = useAllProductType()
@@ -44,8 +45,10 @@ export default function AdminAddProduct() {
       })
       setPending(false)
       resetInput()
+      showToastSuccess("Thêm sản phẩm thành công")
     } catch (error) {
       console.log(error)
+      showToastError("Thêm sản phẩm thất bại")
     }
   }
 
@@ -54,14 +57,14 @@ export default function AdminAddProduct() {
       <form>
         <div className="mb-5">
           <div className="mb-3">
-            <label for="product-des">Product Description:</label>
+            <label for="product-image">Product Image:</label>
           </div>
 
           <textarea
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Image Link"
-            id="image-link"
-            name="image-link"
+            id="product-image"
+            name="product-image"
             className="p-3 w-full h-40 border-gray-400 rounded-lg text-md text-white bg-dark-1 border"
           />
         </div>

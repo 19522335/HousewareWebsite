@@ -26,12 +26,16 @@ import AddCategory from './views/Admin/Category/AddCategory';
 import AddCoupon from './views/Admin/Coupons/AddCoupon';
 import EditCoupon from './views/Admin/Coupons/EditCoupon';
 import { ToastContainer } from 'react-toastify'
+import Intro from './views/Intro/Intro'
+import DonHang from './views/DonHang/DonHang'
 
 const UserLayout = () => {
   return (
-    <div className="font-baskerville">
+    <div className="font-baskerville flex flex-col min-h-screen">
       <Header />
-      <Outlet />
+      <div className="flex-1">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   )
@@ -46,7 +50,11 @@ const LoginLayout = () => {
 }
 
 const AdminLayout = () => {
+  const userLogin = JSON.parse(localStorage.getItem("USER_LOGIN"))
 
+  if (userLogin && userLogin?.role === 'CUSTOMER') {
+    return <p>abc</p>
+  }
   return (
     <div>
       <AdminHeader />
@@ -58,8 +66,6 @@ const AdminLayout = () => {
   )
 }
 
-const abc = false
-
 function App() {
   return (
     <BrowserRouter>
@@ -67,9 +73,11 @@ function App() {
         <Route element={<UserLayout />}>
           <Route index element={<Home />} />
           <Route path="/danh-muc" element={<Product />} />
+          <Route path="/gioi-thieu" element={<Intro />} />
           <Route path="/tin-tuc" element={<News />} />
           <Route path="/gio-hang" element={<Cart />} />
           <Route path="/thanh-toan" element={<Buy />} />
+          <Route path="/don-hang" element={<DonHang />} />
           <Route path="/san-pham/:id" element={<ProductDetail />} />
         </Route>
         <Route element={<LoginLayout />}>
