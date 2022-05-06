@@ -96,13 +96,13 @@ export default function Header() {
             <div className="flex items-center text-white-1 px-2 border-r border-gray-600 text-sm-md font-medium">
               <FiClock className="mr-2" />
               <span className="uppercase">
-                08:00 - 17:00
+                07:00 - 22:00
               </span>
             </div>
             <div className="flex items-center text-white-1 px-2 border-r border-gray-600 text-sm-md font-medium">
               <FiPhone className="mr-2" />
               <span className="uppercase">
-                076 922 0162
+                0797509992
               </span>
             </div>
           </div>
