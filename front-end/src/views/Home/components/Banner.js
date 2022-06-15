@@ -11,7 +11,7 @@ export default function Banner() {
                             MONA STORE
                         </h1>
                         <h2 className="lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-medium opacity-80 text-white uppercase">
-                            Thiết kế từ tình yêu
+                        Thích tiện nghi, tùy lựa chọn
                         </h2>
                         <div className="text-white text-md text-justify opacity-80 mt-3">
                             Trang sức cao cấp MONA tự hào thương hiệu Quốc gia Việt Nam. Với sự đa dạng về chủng loại, độc đáo về kiểu dáng, dẫn đầu về xu hướng đã đang và sẽ chiếm được sự tin tưởng và yêu mến của khách hàng
