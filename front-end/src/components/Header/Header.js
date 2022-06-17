@@ -66,43 +66,31 @@ export default function Header() {
       displayName: 'Danh mục',
       link: 'danh-muc'
     },
-    {
-      displayName: 'Đơn hàng',
-      link: '/don-hang'
-    },
-    {
-      displayName: 'Giới thiệu',
-      link: '/gioi-thieu'
-    },
-    {
-      displayName: 'Tin tức',
-      link: '/tin-tuc'
-    },
   ]
 
 
 
   return (
     <div>
-      <div className="w-full bg-black-3">
+      <div className="w-full bg-green-3">
         <div className="flex items-center justify-between py-2 mx-auto max-w-screen-xl">
           <div className="flex items-center">
-            <div className="flex items-center text-white-1 px-2 border-r border-gray-600 text-sm-md font-medium">
+            <div className="flex items-center text-black-1 px-2 border-r border-gray-600 text-sm-md font-medium">
               <FiMail className="mr-2" />
               <span className="uppercase">
                 Contact
               </span>
             </div>
-            <div className="flex items-center text-white-1 px-2 border-r border-gray-600 text-sm-md font-medium">
+            <div className="flex items-center text-black-1 px-2 border-r border-gray-600 text-sm-md font-medium">
               <FiClock className="mr-2" />
               <span className="uppercase">
-                07:00 - 22:00
+                08:00 - 23:00
               </span>
             </div>
-            <div className="flex items-center text-white-1 px-2 border-r border-gray-600 text-sm-md font-medium">
+            <div className="flex items-center text-black-1 px-2 border-r border-gray-600 text-sm-md font-medium">
               <FiPhone className="mr-2" />
               <span className="uppercase">
-                0797509992
+                0797 509 992
               </span>
             </div>
           </div>
@@ -111,7 +99,7 @@ export default function Header() {
             userLogin ? (
               <button
                 onClick={handleLogout}
-                className="flex items-center text-white"
+                className="flex items-center text-black-1"
               >
                 <span className="mr-2">
                   {
@@ -128,7 +116,7 @@ export default function Header() {
           }
         </div>
       </div>
-      <div className="w-full bg-black-2">
+      <div className="w-full bg-green-4">
         <Container className="justify-between items-center py-5">
           <Link to="/">
             <img src="/logo.png" alt="logo" className="w-56" />
@@ -137,11 +125,11 @@ export default function Header() {
             {
               menu.map((item, index) => {
                 return (
-                  <li className="mr-4 text-md text-white-1 font-medium uppercase" key={index}>
+                  <li className="mr-4 text-md text-black-1 font-medium uppercase" key={index}>
                     <NavLink
                       to={item.link}
                       className={({ isActive }) =>
-                        isActive ? "rounded px-3 py-2 text-yellow-2 border border-dashed border-yellow-2" : "transition-all duration-100 ease-linear rounded hover:px-3 hover:py-2 hover:text-yellow-2 hover:border hover:border-dashed hover:border-yellow-2"
+                        isActive ? "rounded px-3 py-2 text-black-2 border border-dashed border-black-2" : "transition-all duration-100 ease-linear rounded hover:px-3 hover:py-2 hover:text-black-2 hover:border hover:border-dashed hover:border-black-2"
                       }
                     >
                       {item.displayName}
@@ -152,11 +140,11 @@ export default function Header() {
             }
 
             <Link to="/gio-hang">
-              <div className="group relative cart-item text-white cursor-pointer flex items-center transition-all duration-100 ease-linear rounded hover:p-3 hover:text-yellow-2 hover:border hover:border-dashed hover:border-yellow-2">
+              <div className="group relative cart-item text-black-2 cursor-pointer flex items-center transition-all duration-100 ease-linear rounded hover:p-3 hover:text-black-2 hover:border hover:border-dashed hover:border-black-2">
                 <span className=" text-md font-medium mr-3">
                   {totalPrice || 0} <span className="underline">đ</span>
                 </span>
-                <div className="text-md font-medium w-[30px] h-[30px] relative border-2 border-white flex items-center justify-center cart-icon-header text-white">
+                <div className="text-md font-medium w-[30px] h-[30px] relative border-2 border-black-2 flex items-center justify-center cart-icon-header text-white">
                   {cart?.length || 0}
                 </div>
                 <div className="group-hover:flex absolute bg-white top-full border px-3 hidden border-gray-300 min-w-[260px] -right-[20px] min-h-[100px] z-10">

@@ -1,5 +1,5 @@
 .cart-icon-header {
-    color: #fff;
+    color: #000;
     transition: all 500ms ease-in-out;
     &:after {
         position: absolute;
@@ -10,7 +10,7 @@
         border-top-left-radius: 9999px;
         border-top-right-radius: 9999px;
         border-bottom: 0px;
-        border: 2px solid #fff;
+        border: 2px solid #000;
         transition: all 300ms ease;
     }
 }
@@ -18,7 +18,7 @@
 .cart-item {
     &:hover {
         .cart-icon-header {
-            background: #fff;
+            background: #7ee68f;
             color: #000;
             &:after {
                 height: 10px;

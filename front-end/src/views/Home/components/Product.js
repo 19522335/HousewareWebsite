@@ -5,22 +5,22 @@ import CartIcon from '../../../components/CartIcon/CartIcon';
 
 export default function Product() {
     return (
-        <div className="w-full bg-black py-20">
+        <div className="w-full bg-green-5 py-20">
             <div className="mb-10">
-                <h1 className="uppercase text-4xl text-white text-center font-medium">Bộ sưu tập mới</h1>
+                <h1 className="uppercase text-4xl text-black-1 text-center font-medium">Mua với giá sốc</h1>
             </div>
             <Container className="flex-col items-center">
                 <div className="flex sm:flex-row flex-col items-center w-full mb-10">
                     <div className="sm:w-1/4 w-full h-full text-center sm:mr-5 relative product-container group">
                         <Link to="/">   
                             <img src="/images/home/product2.png" alt="product" className="w-full" />
-                            <p className="text-white-1 text-md font-medium mb-3">Vòng cổ tím huyền bí</p>
-                            <p className="text-white-1 text-md font-medium mb-3">
+                            <p className="text-black-1 text-md font-medium mb-3">Nồi chiên không dầu Electrolux E6AF1</p>
+                            <p className="text-black-1 text-md font-medium mb-3">
                                 <del className="opacity-50">
-                                   5,000,000   <span className="underline">đ</span>
+                                   2,250,000   <span className="underline">đ</span>
                                 </del>
-                                <span className="text-white-1 ml-2">
-                                    3,250,000 <span className="underline">đ</span>
+                                <span className="text-black-1 ml-2">
+                                    990,000 <span className="underline">đ</span>
                                 </span> 
                             </p>
                         </Link>
@@ -29,36 +29,36 @@ export default function Product() {
                     <div className="sm:w-1/4 w-full h-full text-center sm:mr-5 relative group">
                         <Link to="/">
                             <img src="/images/home/product3.png" alt="product" className="w-full"  />
-                            <p className="text-white-1 text-md font-medium mb-3">Dây chuyền trái tim đại dương</p>
-                            <p className="text-white-1 text-md font-medium mb-3">
+                            <p className="text-black-1 text-md font-medium mb-3">Máy xay sinh tố Tefal BL2C1166 450W</p>
+                            <p className="text-black-1 text-md font-medium mb-3">
                                 <del className="opacity-50">
-                                    5,000,000   <span className="underline">đ</span>
+                                    890,000   <span className="underline">đ</span>
                                 </del>
-                                <span className="text-white-1 ml-2">
-                                    3,500,000 <span className="underline">đ</span>
+                                <span className="text-black-1 ml-2">
+                                    399,000 <span className="underline">đ</span>
                                 </span>
                             </p>
                         </Link>
                         <CartIcon className="bottom-20 left-2 cursor-pointer group-hover:opacity-100" />
                     </div>
                     <div className="sm:w-1/2 w-full">
-                        <img src="/images/home/product1.jpg" alt="model" className="w-full"  />
+                        <img src="/images/home/product1.png" alt="model" className="w-full"  />
                     </div>
                 </div>
                 <div className="flex sm:flex-row flex-col items-center w-full">
                     <div className="sm:w-1/2 w-full sm:mr-5">
-                        <img src="/images/home/product4.jpg" alt="model" className="w-full h-[350px] object-cover" />
+                        <img src="/images/home/product4.png" alt="model" className="w-full h-[350px] object-cover" />
                     </div>
                     <div className="sm:w-1/4 w-full h-full text-center sm:mr-5 relative group">
                         <Link to="/">
-                            <img src="/images/home/product3.png" alt="product" className="w-full"  />
-                            <p className="text-white-1 text-md font-medium mb-3">Dây chuyền trái tim đại dương</p>
-                            <p className="text-white-1 text-md font-medium mb-3">
+                            <img src="/images/home/product2.1.png" alt="product" className="w-full"  />
+                            <p className="text-black-1 text-md font-medium mb-3">Bàn Ủi Hơi Nước BEKO SIM3617</p>
+                            <p className="text-black-1 text-md font-medium mb-3">
                                 <del className="opacity-50">
-                                    5,000,000   <span className="underline">đ</span>
+                                    480,000   <span className="underline">đ</span>
                                 </del>
-                                <span className="text-white-1 ml-2">
-                                    3,500,000 <span className="underline">đ</span>
+                                <span className="text-black-1 ml-2">
+                                    279,000 <span className="underline">đ</span>
                                 </span>
                             </p>
                         </Link>
@@ -66,14 +66,14 @@ export default function Product() {
                     </div>
                     <div className="sm:w-1/4 w-full h-full text-center sm:mr-5 relative group">
                         <Link to="/">
-                            <img src="/images/home/product2.png" alt="product" className="w-full" />
-                            <p className="text-white-1 text-md font-medium mb-3">Vòng cổ tím huyền bí</p>
-                            <p className="text-white-1 text-md font-medium mb-3">
+                            <img src="/images/home/product2.2.png" alt="product" className="w-full" />
+                            <p className="text-black-1 text-md font-medium mb-3">Quạt Bàn YANFAN B202</p>
+                            <p className="text-black-1 text-md font-medium mb-3">
                                 <del className="opacity-50">
-                                    5,000,000   <span className="underline">đ</span>
+                                    350,000   <span className="underline">đ</span>
                                 </del>
-                                <span className="text-white-1 ml-2">
-                                    3,250,000 <span className="underline">đ</span>
+                                <span className="text-black-1 ml-2">
+                                    239,000 <span className="underline">đ</span>
                                 </span>
                             </p>
                         </Link>

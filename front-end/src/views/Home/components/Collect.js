@@ -4,20 +4,20 @@ import { Link } from 'react-router-dom';
 export default function Collect() {
     const collectList = [
         {
-            image: '/images/home/collect-1.jpg',
+            image: '/images/home/collect-1.png',
             link: '/',
         },
         {
-            image: '/images/home/collect-2.jpg',
+            image: '/images/home/collect-2.png',
             link: '/',
         },
         {
-            image: '/images/home/collect-3.jpg',
+            image: '/images/home/collect-3.png',
             link: '/',
         },
     ]
     return (
-        <div className="w-full bg-black-2 lg:py-20">
+        <div className="w-full bg-green-4 lg:py-20">
             <Container className="sm:flex-row flex-col items-center">
                 {
                     collectList.map((collect, index) => {
