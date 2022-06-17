@@ -59,7 +59,7 @@ export default function Login() {
   }
 
   return (
-    <div className="w-screen h-screen bg-[url('/public/images/home/bg_nhanxet.jpg')] bg-cover bg-center">
+    <div className="w-screen h-screen bg-[url('/public/images/home/bg_nhanxet.png')] bg-cover bg-center">
       <div className="w-full h-full bg-dark">
         <div className="w-[500px] mx-auto py-20">
           <h1 className="text-white text-4xl text-center mb-10 font-medium">Đăng nhập</h1>

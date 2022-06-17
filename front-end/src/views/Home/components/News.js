@@ -26,47 +26,47 @@ export default function News() {
 
   const newsList = [
     {
-      image: '/images/home/news-card-1.jpg',
-      title: 'Aerolithe Performance Titanium Watch',
-      time: '3 tháng Mười Hai, 2018',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...'
+      image: '/images/home/news-card-1.png',
+      title: 'SALE khổng lồ mừng khai trương, ÁP DỤNG ĐẾN HẾT THÁNG 6',
+      time: '18 tháng Mười Sáu, 2022',
+      content: 'Tưng bừng khai trương, nhận nhiều ưu đãi khuyến mãi ngay tại cửa hàng...'
     },
     {
-      image: '/images/home/news-card-2.jpg',
-      title: 'Aerolithe Performance Titanium Watch',
-      time: '3 tháng Mười Hai, 2018',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...'
+      image: '/images/home/news-card-2.png',
+      title: 'SIÊU SALE tháng 6 cho các sản phẩm máy xay PHILIPS',
+      time: '18 tháng Mười Sáu, 2022',
+      content: 'PHILIPS là một nhãn hàng nổi tiếng với chất lượng sản phẩm. Khuyến mãi các sản phẩm máy xay PHILIPS...'
     },
     {
-      image: '/images/home/news-card-3.jpg',
-      title: 'Aerolithe Performance Titanium Watch',
-      time: '3 tháng Mười Hai, 2018',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...'
+      image: '/images/home/news-card-3.png',
+      title: 'NHẬN NGAY MÃ GIẢM GIÁ 30% cho toàn bộ đơn hàng',
+      time: '18 tháng Mười Sáu, 2022',
+      content: 'Nhập mã CIGSALE30 để nhận ngay ưu đãi 30% cho toàn bộ đơn hàng, áp dụng đến....'
     },
     {
-      image: '/images/home/news-card-4.jpg',
-      title: 'Aerolithe Performance Titanium Watch',
-      time: '3 tháng Mười Hai, 2018',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...'
+      image: '/images/home/news-card-4.png',
+      title: 'FREESHIP cho toàn bộ đơn hàng tại cửa hàng',
+      time: '18 tháng Mười Sáu, 2022',
+      content: 'Chương trình miễn phí vận chuyển cho toàn bộ đơn hàng tại cửa hàng...'
     },
     {
-      image: '/images/home/news-card-5.jpg',
-      title: 'Aerolithe Performance Titanium Watch',
-      time: '3 tháng Mười Hai, 2018',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...'
+      image: '/images/home/news-card-5.png',
+      title: 'Miễn phí đổi trả cho các đơn hàng được mua tại cửa hàng',
+      time: '18 tháng Mười Sáu, 2022',
+      content: 'Shop sẽ đổi trả miễn phí các đơn hàng tại cửa hàng nếu như thỏa các điều kiện như:... '
     },
     {
-      image: '/images/home/news-card-6.jpg',
-      title: 'Aerolithe Performance Titanium Watch',
-      time: '3 tháng Mười Hai, 2018',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...'
+      image: '/images/home/news-card-6.png',
+      title: 'Hãy thử vận may với Vòng quay may mắn,rất nhiều quà tặng hấp dẫn',
+      time: '18 tháng Mười Sáu, 2022',
+      content: 'Đơn hàng từ 100K trở lên sẽ được 1 lần thử vận may tại shop, hãy thử ngay...'
     },
 
   ];
   return (
     <div className="w-full bg-green-4 py-20">
       <div className="mb-10">
-        <h1 className="uppercase text-4xl text-black-1 text-center font-medium">Tin tức</h1>
+        <h1 className="uppercase text-4xl text-black-1 text-center font-medium">Chương trình khuyến mãi</h1>
       </div>
       <div className="max-w-screen-xl w-full mx-auto px-2">
         <div className="mr-[-8px] ml-[-8px]">
