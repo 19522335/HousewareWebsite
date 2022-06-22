@@ -12,7 +12,7 @@ export default function Product() {
             <Container className="flex-col items-center">
                 <div className="flex sm:flex-row flex-col items-center w-full mb-10">
                     <div className="sm:w-1/4 w-full h-full text-center sm:mr-5 relative product-container group">
-                        <Link to="/">   
+                        <Link to="/san-pham/62acf0485d015cc3eebdb88e">   
                             <img src="/images/home/product2.png" alt="product" className="w-full" />
                             <p className="text-black-1 text-md font-medium mb-3">Nồi chiên không dầu Electrolux E6AF1</p>
                             <p className="text-black-1 text-md font-medium mb-3">
@@ -27,7 +27,7 @@ export default function Product() {
                         <CartIcon className="bottom-20 left-2 cursor-pointer group-hover:opacity-100"/>
                     </div>
                     <div className="sm:w-1/4 w-full h-full text-center sm:mr-5 relative group">
-                        <Link to="/">
+                        <Link to="/san-pham/62acf0f85d015cc3eebdb88f">
                             <img src="/images/home/product3.png" alt="product" className="w-full"  />
                             <p className="text-black-1 text-md font-medium mb-3">Máy xay sinh tố Tefal BL2C1166 450W</p>
                             <p className="text-black-1 text-md font-medium mb-3">
@@ -50,7 +50,7 @@ export default function Product() {
                         <img src="/images/home/product4.png" alt="model" className="w-full h-[350px] object-cover" />
                     </div>
                     <div className="sm:w-1/4 w-full h-full text-center sm:mr-5 relative group">
-                        <Link to="/">
+                        <Link to="/san-pham/62acf1b45d015cc3eebdb890">
                             <img src="/images/home/product2.1.png" alt="product" className="w-full"  />
                             <p className="text-black-1 text-md font-medium mb-3">Bàn Ủi Hơi Nước BEKO SIM3617</p>
                             <p className="text-black-1 text-md font-medium mb-3">

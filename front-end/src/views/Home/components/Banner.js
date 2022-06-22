@@ -18,7 +18,7 @@ export default function Banner() {
                         </div>
                     </div>
 
-                    <Link to="/asd" className="hover:border-white hover:text-white hover:bg-yellow-1 transition-all duration-300 ease-in-out px-4 py-3 rounded opacity-80 font-medium uppercase text-black-1 border border-dashed border-black-1">
+                    <Link to="/danh-muc" className="hover:border-white hover:text-white hover:bg-yellow-1 transition-all duration-300 ease-in-out px-4 py-3 rounded opacity-80 font-medium uppercase text-black-1 border border-dashed border-black-1">
                         Mua ngay
                     </Link>
                 </div>

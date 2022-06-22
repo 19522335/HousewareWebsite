@@ -21,7 +21,7 @@ export default function Dashboard() {
   const cost = useCost()
   const [reportCost, setReportCost] = useState()
   const [reportTotal, setReportTotal] = useState()
-  const labels = ['Nhẫn', 'Dây chuyền', 'Bông tai', 'Lắc tay', 'Đồng hồ']
+  const labels = ['Đô Inox', 'Đồ gỗ', 'Đồ sứ', 'Đồ thủy tinh', 'Đồ điện']
   const dataDoughnutChart = [15, 15, 20, 25, 25]
 
   useEffect(() => {

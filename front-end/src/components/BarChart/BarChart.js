@@ -34,27 +34,27 @@ export const data = {
     labels,
     datasets: [
         {
-            label: 'Nhẫn',
+            label: 'Đồ Inox',
             data: [20, 30, 50, 40, 60, 80, 100],
             backgroundColor: '#0e9f6e',
         },
         {
-            label: 'Dây chuyền',
+            label: 'Đồ gỗ',
             data: [30, 20, 10, 70, 65, 85, 10],
             backgroundColor: '#0694a2',
         },
         {
-            label: 'Bông tai',
+            label: 'Đồ sứ',
             data: [10, 35, 55, 48, 48, 34, 64],
             backgroundColor: '#3f83f8',
         },
         {
-            label: 'Lắc tay',
+            label: 'Đồ thủy tinh',
             data: [24, 12, 54, 75, 13, 57, 70],
             backgroundColor: '#ff5a1f',
         },
         {
-            label: 'Đồng hồ',
+            label: 'Đồ điện',
             data: [23, 43, 23, 56, 86, 32, 100],
             backgroundColor: '#e2ba48',
         },

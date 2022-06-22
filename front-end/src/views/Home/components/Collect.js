@@ -5,15 +5,15 @@ export default function Collect() {
     const collectList = [
         {
             image: '/images/home/collect-1.png',
-            link: '/',
+            link: '/san-pham/62aceda45d015cc3eebdb88b',
         },
         {
             image: '/images/home/collect-2.png',
-            link: '/',
+            link: '/san-pham/62aceee85d015cc3eebdb88c',
         },
         {
             image: '/images/home/collect-3.png',
-            link: '/',
+            link: '/san-pham/62acefa05d015cc3eebdb88d',
         },
     ]
     return (
