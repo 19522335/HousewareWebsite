@@ -28,6 +28,7 @@ import EditCoupon from './views/Admin/Coupons/EditCoupon';
 import { ToastContainer } from 'react-toastify'
 import Intro from './views/Intro/Intro'
 import DonHang from './views/DonHang/DonHang'
+import MessengerCustomerChat from 'react-messenger-customer-chat'
 
 const UserLayout = () => {
   return (
@@ -103,6 +104,10 @@ function App() {
         </Route>
       </Routes>
       <ToastContainer newestOnTop />
+      <MessengerCustomerChat 
+      pageId="101064428553328"
+      appId="899712624484749"
+      />
     </BrowserRouter>
   );
 }
