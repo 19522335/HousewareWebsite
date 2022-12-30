@@ -105,8 +105,8 @@ function App() {
       </Routes>
       <ToastContainer newestOnTop />
       <MessengerCustomerChat 
-      pageId="101064428553328"
-      appId="899712624484749"
+      pageId="110075895291944"
+      appId="3317137035215894"
       />
     </BrowserRouter>
   );
