@@ -21,13 +21,25 @@ export default function Buy() {
   
   const handleOrder = async () => {
     setDisabled(true)
+    if(!address){
+      showToastError("Vui lòng điền thông tin địa chỉ")
+      setDisabled(false)
+      return;
+    }
+    if(!phone){
+      showToastError("Vui lòng điền thông tin số điện thoại")
+      setDisabled(false)
+      return;
+    }
     try {
       await invoiceApi.postInvoice({
         userId: userLogin?._id,
+        phone,
         address,
         cost: totalPrice,
         paymemtMethod: paymentMethod
       })
+      
       showToastSuccess("Đặt hàng thành công")
       setDisabled(false)
     } catch (err) {
@@ -69,6 +81,7 @@ export default function Buy() {
           <div className="w-1/2 px-10">
             <Input
               className="border border-gray-400 rounded-lg text-md text-white bg-white text-black"
+              id="tien1"
               label="Địa chỉ nhận hàng"
               name="shipping-address"
               dark={1}
@@ -80,6 +93,7 @@ export default function Buy() {
 
             <Input
               className="border border-gray-400 rounded-lg text-md text-white bg-white text-black"
+              id="tien2"
               label="Số điện thoại"
               name="phone"
               dark={1}
