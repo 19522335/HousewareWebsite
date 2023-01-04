@@ -112,7 +112,9 @@ export default function Buy() {
               <li className="py-2 ">
                 <input id="payment_method_card" type="radio" name="payment_method" value="CARD" onChange={e => setPaymentMethod(e.target.value)} />
                 <label className="ml-2 text-black font-medium text-sm-md" htmlFor="payment_method_card">Chuyển khoản ngân hàng</label>
-                <p className="mt-2 text-sm-md">Thực hiện thanh toán vào ngay tài khoản ngân hàng của chúng tôi. Vui lòng sử dụng Mã đơn hàng của bạn trong phần Nội dung thanh toán. Đơn hàng sẽ đươc giao sau khi tiền đã chuyển.</p>
+                <p className="mt-2 text-sm-md">Thực hiện thanh toán vào ngay tài khoản ngân hàng của chúng tôi. Vui lòng ghi rõ Mã sản phẩm + Số điện thoại của bạn trong phần Nội dung thanh toán. Đơn hàng sẽ đươc giao sau khi tiền đã chuyển.</p>
+                <p className="mt-2 text-sm-md">TECHCOMBANK 19035267324017 HOANG NHAT TIEN </p>
+                <p className="mt-2 text-sm-md">Ví dụ: NC-EG4000CSY 0797509992 </p>
               </li>
             </ul>
 
