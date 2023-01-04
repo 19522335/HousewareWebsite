@@ -80,6 +80,7 @@ function App() {
           <Route path="/thanh-toan" element={<Buy />} />
           <Route path="/don-hang" element={<DonHang />} />
           <Route path="/san-pham/:id" element={<ProductDetail />} />
+          <Route path="/da" element={<News/>} />
         </Route>
         <Route element={<LoginLayout />}>
           <Route path="/dang-ki" element={<Register />} />

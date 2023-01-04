@@ -26,6 +26,7 @@ export default function News() {
 
   const newsList = [
     {
+      Link: '' ,
       image: '/images/home/news-card-1.png',
       title: 'SALE khổng lồ mừng khai trương, ÁP DỤNG ĐẾN HẾT THÁNG 6',
       time: '18 tháng Mười Sáu, 2022',
