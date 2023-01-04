@@ -24,6 +24,9 @@ export default function Header() {
     localStorage.removeItem("USER_LOGIN")
     navigate('/dang-nhap')
   }
+  const handleAdmin = () => {
+    navigate('/admin/dashboard')
+  }
 
   useEffect(() => {
     if (userLogin) {
@@ -98,15 +101,15 @@ export default function Header() {
           {
             userLogin ? (
               <button
-                onClick={handleLogout}
+                
                 className="flex items-center text-black-1"
               >
-                <span className="mr-2">
+                <span onClick={handleAdmin} className="mr-2">
                   {
                     userLogin?.nameAccount
                   }
                 </span>
-                <FiLogOut width={15} />
+                <FiLogOut onClick={handleLogout} width={15} />
               </button>
             ) : (
               <Link to="/dang-nhap" className="text-white text-2xl cursor-pointer">
